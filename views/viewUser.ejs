@@ -1,0 +1,36 @@
+
+    <%-include('./partials/header');%>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <section class="viewuser">
+        <div class="container">
+            <div class="heading">
+                <h1>View All Users</h1>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Job Location</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <%for(let i of result){%>
+                  <tr>
+                    <th scope="row"><%=i.id%></th>
+                    <td><%=i.firstname%></td>
+                    <td><%=i.lastname%></td>
+                    <td><%=i.email%></td>
+                    <td><%=i.state%></td>
+                  </tr>
+                  <%}%>
+                  
+                </tbody>
+              </table>
+        </div>
+    </section>
+
+   <%-include('./partials/footer.ejs');%>

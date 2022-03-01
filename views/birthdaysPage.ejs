@@ -1,0 +1,45 @@
+
+    <%-include('./partials/header');%>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <section class="birthday">
+        <div class="container">
+            <div class="heading mb-3">
+                <h1>Upcoming Birthdays</h1>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <%for(let i of result){%>
+                        <!-- <form method="post" action="/birthdays/:<%=i.id%>"> -->
+                  <tr>
+                    <th scope="row">#</th>
+                    <td name="dob"><%=moment(i.EntryDate).format('Do MMMM');%></td>
+                    <td name="firstname"><%=i.firstname%></td>
+                    <td ><%=i.email%></td>
+                   <td><button class="btn btn-success"><a href="/birthdaywish/<%=i.id%>"> WISH</a></button></td>
+                  </tr>
+                <!-- </form> -->
+                  <%}%>
+                  
+                  
+                </tbody>
+              </table>
+              <!-- <div class="table"> 
+                <form>
+                    <div>snake<input type="hidden" name="cartitem" value="55"></div>
+                    <div><input name="count" value="4" /></div>
+                </form>
+            </div> -->
+        </div>
+    </section>
+
+   <%-include('./partials/footer.ejs');%>

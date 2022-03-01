@@ -1,0 +1,73 @@
+
+    <%-include('./partials/header');%>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <section class="update-profile">
+        <div class="container">
+            <form action="/update-profile/<%=result.id%>" method="post">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">First Name</label>
+                  <input type="text" class="form-control" id="inputEmail4" name="firstname" value="<%=result.firstname%>" >
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">Last Name</label>
+                  <input type="text" class="form-control" id="inputPassword4" name="lastname" value="<%=result.lastname%>" >
+                </div>
+              </div>
+              <div class="form-group">
+                  <label for="inputAddress">Mobile</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="81**********" name="number" value="<%=result.number%>" >
+                </div>
+              <div class="form-group">
+                  <label for="inputAddress">Email</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="abc@gmail.com" name="email" value="<%=result.email%>" >
+                </div>
+                <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputAddress">DOB</label>
+                <div id="date-picker-example" class="input-with-post-icon datepicker">
+                  <input id="datepicker" class="form-control" name="dob" value="<%=moment(result.dob).format('YYYY-MM-DD')%>" />
+              </div>
+              </div>
+              <div class="form-group col-md-6">
+                  <label class="mr-2" for="inlineFormCustomSelectPref">Gender</label>
+                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelectPref" name="gender" >
+                    <option value="<%=result.gender%>"selected><%=result.gender%></option>
+                  </select>
+                  </div>
+          </div>
+         
+
+              <div class="form-group">
+                <label for="inputAddress">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="address1" value="<%=result.address1%>" >
+              </div>
+              <div class="form-group">
+                <label for="inputAddress2">Address 2</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" name="address2" value="<%=result.address2%>" >
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputCity">City</label>
+                  <input type="text" class="form-control" id="inputCity" name="city" value="<%=result.city%>" >
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputState">State</label>
+                  <select id="inputState" class="form-control" name="state" value="<%=result.state%>" >
+                    <option value="<%=result.state%>"> <%=result.state%></option>
+                  </select>
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="inputZip">Pincode</label>
+                  <input type="text" class="form-control" id="inputZip" name="pincode" value="<%=result.pincode%>" >
+                </div>
+              </div>
+              <div class="viewbtn">
+              <button class="btn btn-success"><i class="bi bi-pencil-square"></i> Update Profile</button>
+            </div>
+        </form>
+        </div>
+    </section>
+
+   <%-include('./partials/footer.ejs');%>

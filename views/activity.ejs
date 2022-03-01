@@ -1,0 +1,36 @@
+
+    <%-include('./partials/header');%>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <section class="activity">
+        <div class="container">
+            <div class="heading">
+               <h1>Daily Activity</h1> 
+            </div>
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Entry Time</th>
+                    <th scope="col">Exit Time</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                    <%for(let i of result){%>
+                  <tr>
+                    <th scope="row">#</th>
+                    <td><%=moment(i.EntryDate).format('Do MMMM, YYYY');%></td>
+                    <td><%=moment(i.EntryTime).format('h:mm a');%></td>
+                    <td><%=moment(i.ExitTime).format('h:mm a');%></td>
+                   
+                  </tr>
+                  <%}%>
+                  
+                </tbody>
+              </table>
+        </div>
+    </section>
+
+   <%-include('./partials/footer.ejs');%>
